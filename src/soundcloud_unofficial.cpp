@@ -46,10 +46,8 @@ int main(int argc, char *argv[])
     //   - SailfishApp::pathTo(QString) to get a QUrl to a resource file
     //
     // To display the view, call "show()" (will show fullscreen on device).
-    QMediaPlayer player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("/Users/me/Music/coolsong.mp3"));
-    player->setVolume(50);
-    player->play();
+
+    StreamManager streamy;
     return SailfishApp::main(argc, argv);
 }
 

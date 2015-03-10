@@ -14,7 +14,8 @@ TARGET = soundcloud_unofficial
 
 CONFIG += sailfishapp
 QT += multimedia
-SOURCES += src/soundcloud_unofficial.cpp
+SOURCES += src/soundcloud_unofficial.cpp \
+    src/streammanager.cpp
 
 OTHER_FILES += qml/soundcloud_unofficial.qml \
     qml/cover/CoverPage.qml \
@@ -30,4 +31,7 @@ OTHER_FILES += qml/soundcloud_unofficial.qml \
 # following CONFIG line
 CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/soundcloud_unofficial-de.ts
+
+HEADERS += \
+    src/streammanager.h
 
