@@ -1,11 +1,11 @@
 #ifndef STREAMMANAGER_H
 #define STREAMMANAGER_H
-
-class StreamManager
+#include <QObject>
+class StreamManager : public QObject
 {
     Q_OBJECT
 public:
-    StreamManager();
+    explicit StreamManager(QObject *parent = 0);
     Q_INVOKABLE void play();
 };
 

@@ -1,20 +1,16 @@
 #include "streammanager.h"
+#include <QMediaPlayer>
 
-class StreamManager : public QObject{
+#include <QMediaPlayer>
 
-    Q_OBJECT
-public:
-    StreamManager(){
-        return;
-    }
+StreamManager::StreamManager(QObject *parent): QObject(parent)
+{
 
-    Q_INVOKABLE void play() {
-        QMediaPlayer *player = new QMediaPlayer;
-        player->setMedia(QUrl("http://37.48.81.130:9530/listen.pls"));
-        player->setVolume(100);
-        player->play();
-        return nullptr;
-    }
-
-
-};
+}
+ void StreamManager::play()
+{
+    QMediaPlayer *player = new QMediaPlayer;
+    player->setMedia(QUrl("http://37.48.81.130:9530/listen.pls"));
+    player->setVolume(100);
+    player->play();
+}
