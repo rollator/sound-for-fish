@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=soundcloud_unofficial
+Exec=soundcloud_unofficial
+Name=soundcloud_unofficial
+# translation example:
+# your app name in German locale (de)
+Name[de]=soundcloud_unofficial
+
