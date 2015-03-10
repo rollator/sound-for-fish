@@ -34,4 +34,3 @@ TRANSLATIONS += translations/soundcloud_unofficial-de.ts
 
 HEADERS += \
     src/streammanager.h
-

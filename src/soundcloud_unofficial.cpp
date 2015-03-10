@@ -34,6 +34,8 @@
 #include <QtMultimedia>
 
 #include <sailfishapp.h>
+// #include <QVariant> // fancy error fix
+#include "streammanager.h"
 
 
 int main(int argc, char *argv[])
@@ -46,8 +48,13 @@ int main(int argc, char *argv[])
     //   - SailfishApp::pathTo(QString) to get a QUrl to a resource file
     //
     // To display the view, call "show()" (will show fullscreen on device).
-
-    StreamManager streamy;
-    return SailfishApp::main(argc, argv);
+    StreamManager *streamy;
+    QGuiApplication *app = SailfishApp::application(argc, argv);
+    QQuickView *view = SailfishApp::createView();
+    view->rootContext()->setContextProperty("streamy", &streamy);
+    view->setSource(SailfishApp::pathTo("qml/soundcloud_unofficial.qml"));
+    view->showFullScreen();
+    return app->exec();
+    //return SailfishApp::main(argc, argv);
 }
 
