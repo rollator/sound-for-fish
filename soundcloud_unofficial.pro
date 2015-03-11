@@ -13,7 +13,8 @@
 TARGET = soundcloud_unofficial
 
 CONFIG += sailfishapp
-QT += multimedia
+QT += multimedia \
+      network
 SOURCES += src/soundcloud_unofficial.cpp \
     src/streammanager.cpp
 

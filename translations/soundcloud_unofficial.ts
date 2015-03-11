@@ -11,15 +11,19 @@
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Show Page 2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>UI Template</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Hello Sailors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>stop</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
