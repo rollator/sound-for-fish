@@ -38,23 +38,29 @@ Page {
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
         anchors.fill: parent
+        //pageStack.push(Qt.resolvedUrl("GlobalSearch.qml"))
 
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
         PullDownMenu {
-            MenuItem {
-                text: qsTr("play")
-                onClicked: streamy.play()
-
-            }
             MenuItem {
                 text: qsTr("stop")
                 onClicked: streamy.stop()
 
             }
-//            MenuItem {
-//                text: qsTr("Show Page 2")
-//                onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))
-//            }
+            MenuItem {
+                text: qsTr("play")
+                onClicked: streamy.play()
+
+            }
+            MenuItem{
+                text: qsTr("pause")
+                onClicked: streamy.pause()
+            }
+
+            MenuItem {
+                text: qsTr("Search online")
+                onClicked: pageStack.push(Qt.resolvedUrl("GlobalSearch.qml"))
+            }
         }
 
         // Tell SilicaFlickable the height of its content.
@@ -68,8 +74,52 @@ Page {
             width: page.width
             spacing: Theme.paddingLarge
             PageHeader {
-                title: qsTr("UI Template")
+                title: qsTr("Control Center")
             }
+            Row {
+                id: soundControlButtons
+                spacing: Theme.paddingLarge
+                anchors.horizontalCenter: parent.horizontalCenter
+                property bool playPossible: streamy.paused()
+                property bool pausePossible: !streamy.paused()
+                IconButton {
+                    id: stop
+                    icon.source: "image://theme/icon-l-clear"
+                    onClicked: {
+                        streamy.stop()
+                        soundControlButtons.playPossible = false
+                        soundControlButtons.pausePossible = false
+                    }
+                }
+
+                IconButton {
+                    id:pause
+                    icon.source: "image://theme/icon-l-pause"
+                    enabled: soundControlButtons.pausePossible
+                    onClicked: {
+                        streamy.pause()
+                        soundControlButtons.playPossible = true
+                        soundControlButtons.pausePossible = false
+                    }
+                }
+                IconButton {
+                    id: play
+                    icon.source: "image://theme/icon-l-play"
+                    enabled: soundControlButtons.playPossible
+                    onClicked: {
+                        streamy.play()
+                        soundControlButtons.playPossible = false
+                        soundControlButtons.pausePossible = true
+                    }
+                }
+                IconButton{
+                    id: next
+                    icon.source: "image://theme/icon-m-next-song"
+                    onClicked: streamy.next()
+                }
+            }
+
+
             Label {
                 x: Theme.paddingLarge
                 text: qsTr("Hello Sailors")
@@ -77,6 +127,11 @@ Page {
                 font.pixelSize: Theme.fontSizeExtraLarge
             }
         }
+
+
+
+
+
     }
 }
 

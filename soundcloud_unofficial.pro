@@ -16,17 +16,17 @@ CONFIG += sailfishapp
 QT += multimedia \
       network
 SOURCES += src/soundcloud_unofficial.cpp \
-    src/streammanager.cpp
+    src/streamManager.cpp
 
 OTHER_FILES += qml/soundcloud_unofficial.qml \
     qml/cover/CoverPage.qml \
     qml/pages/FirstPage.qml \
-    qml/pages/SecondPage.qml \
     rpm/soundcloud_unofficial.changes.in \
     rpm/soundcloud_unofficial.spec \
     rpm/soundcloud_unofficial.yaml \
     translations/*.ts \
-    soundcloud_unofficial.desktop
+    soundcloud_unofficial.desktop \
+    qml/pages/GlobalSearch.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -34,4 +34,4 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/soundcloud_unofficial-de.ts
 
 HEADERS += \
-    src/streammanager.h
+    src/streamManager.h

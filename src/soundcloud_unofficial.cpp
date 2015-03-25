@@ -37,19 +37,11 @@
 #include <QQmlContext>
 
 #include <sailfishapp.h>
-#include "streammanager.h"
+#include "streamManager.h"
 
 
 int main(int argc, char *argv[])
 {
-    // SailfishApp::main() will display "qml/template.qml", if you need more
-    // control over initialization, you can use:
-    //
-    //   - SailfishApp::application(int, char *[]) to get the QGuiApplication *
-    //   - SailfishApp::createView() to get a new QQuickView * instance
-    //   - SailfishApp::pathTo(QString) to get a QUrl to a resource file
-    //
-    // To display the view, call "show()" (will show fullscreen on device).
     QGuiApplication *app = SailfishApp::application(argc, argv);
     QQuickView *view = SailfishApp::createView();
     StreamManager *streamy = new StreamManager(app);
@@ -57,6 +49,5 @@ int main(int argc, char *argv[])
     view->setSource(SailfishApp::pathTo("qml/soundcloud_unofficial.qml"));
     view->showFullScreen();
     return app->exec();
-    //return SailfishApp::main(argc, argv);
 }
 

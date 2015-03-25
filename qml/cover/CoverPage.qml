@@ -42,12 +42,24 @@ CoverBackground {
         id: coverAction
 
         CoverAction {
+            id: playAction
+            property bool playing
+            iconSource: "image://theme/icon-cover-pause"
+            onPlayingChanged: {
+                playAction.iconSource = "image://theme/icon-cover-play"
+            }
+
+            onClicked: {
+                streamy.pause()
+                playAction.playing = playAction.playing ? false : true
+            }
+        }
+        CoverAction {
             iconSource: "image://theme/icon-cover-next"
+            onClicked: streamy.next()
         }
 
-        CoverAction {
-            iconSource: "image://theme/icon-cover-pause"
-        }
+
     }
 }
 

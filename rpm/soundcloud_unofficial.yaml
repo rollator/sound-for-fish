@@ -35,6 +35,8 @@ Requires:
   - sailfishsilica-qt5 >= 0.10.9
   - qt5-qtdeclarative-import-multimedia
   - qt5-qtmultimedia-plugin-mediaservice-gstmediaplayer
+  - gst-av
+  - gst-plugins-bad
 # All installed files
 Files:
   - '%{_bindir}'

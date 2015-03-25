@@ -11,11 +11,7 @@
 <context>
     <name>FirstPage</name>
     <message>
-        <source>UI Template</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hello Sailors</source>
+        <source>stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -23,18 +19,30 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>stop</source>
+        <source>pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search online</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hello Sailors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Control Center</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>SecondPage</name>
+    <name>GlobalSearch</name>
     <message>
-        <source>Nested Page</source>
+        <source>search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Item</source>
+        <source>add to Playlist</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -16,18 +16,49 @@
     </message>
     <message>
         <source>UI Template</source>
-        <translation>UI-Vorlage</translation>
+        <translation type="vanished">UI-Vorlage</translation>
     </message>
     <message>
         <source>Hello Sailors</source>
         <translation>Hallo Matrosen</translation>
     </message>
     <message>
+        <source>stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>stop</source>
+        <source>pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search online</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Control Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GlobalSearch</name>
+    <message>
+        <source>UI Template</source>
+        <translation type="obsolete">UI-Vorlage</translation>
+    </message>
+    <message>
+        <source>Hello Sailors</source>
+        <translation type="obsolete">Hallo Matrosen</translation>
+    </message>
+    <message>
+        <source>search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>add to Playlist</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -35,11 +66,11 @@
     <name>SecondPage</name>
     <message>
         <source>Nested Page</source>
-        <translation>Unterseite</translation>
+        <translation type="vanished">Unterseite</translation>
     </message>
     <message>
         <source>Item</source>
-        <translation>Element</translation>
+        <translation type="vanished">Element</translation>
     </message>
 </context>
 </TS>
