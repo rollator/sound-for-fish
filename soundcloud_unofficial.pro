@@ -16,7 +16,9 @@ CONFIG += sailfishapp
 QT += multimedia \
       network
 SOURCES += src/soundcloud_unofficial.cpp \
-    src/streamManager.cpp
+    src/player.cpp \
+    src/streammanager.cpp \
+    src/searchmanager.cpp
 
 OTHER_FILES += qml/soundcloud_unofficial.qml \
     qml/cover/CoverPage.qml \
@@ -34,4 +36,6 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/soundcloud_unofficial-de.ts
 
 HEADERS += \
-    src/streamManager.h
+    src/player.h \
+    src/streammanager.h \
+    src/searchmanager.h

@@ -31,7 +31,7 @@ Page {
         width: searchPage.width
 
         PageHeader {
-            title: "Countries"
+            title: "Search On Soundcloud"
         }
 
         SearchField {
@@ -62,8 +62,8 @@ Page {
 
             PullDownMenu {
                 MenuItem {
-                    text: qsTr("search")
-                    onClicked: streamy.search("hello")
+                    text: qsTr("meh; placeholder")
+//                    onClicked: streamy.search("meh; placeholder")
 //                    onClicked: {
 //                        //keepSearchFieldFocus = searchField.activeFocus
 //                        //activeView = "grid"
@@ -120,6 +120,10 @@ Page {
         function update() {
             var tracks = streamy.tracks()
             listModel.clear()
+            if(tracks.size == 0){
+                return
+            }
+
             for(var index = 0; index < tracks.length; index++){
                 append({"text": tracks[index]})
             }

@@ -12,6 +12,7 @@ class StreamManager : public QObject
     QMediaPlayer *player;
     QString CLIENT_ID;
     QString BASE_ADDRESS;
+    QString BASE_ADDRESS_V2;
     QJsonArray searchResults;
     QMediaPlaylist *playlist;
 public:
@@ -29,7 +30,7 @@ public slots:
     void reactSearch (QNetworkReply*);
 private:
     QString theList;
-    QNetworkAccessManager* manager;
+    QNetworkAccessManager* searchManager;
     void followRedirect(QNetworkReply*);
 
 signals:
