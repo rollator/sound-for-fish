@@ -30,6 +30,7 @@ void StreamManager::play()
 void StreamManager::playSearchItem(int index)
 {
     QString url = searchResults.takeAt(index).toObject()["stream_url"].toString();
+    int trackNr = searchResults.takeAt(index).toObject()["id"].toInt();
     playlist->clear();
     playlist->addMedia(QUrl(url+"?client_id="+CLIENT_ID));
 

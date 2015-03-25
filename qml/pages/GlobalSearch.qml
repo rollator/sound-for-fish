@@ -64,6 +64,8 @@ Page {
             delegate: ListItem {
                 id: listItem
                 menu: contextMenuComponent
+                contentHeight: someLabel.height
+
                 onClicked: streamy.playSearchItem(index)
 
                 ListView.onAdd: AddAnimation {
@@ -73,6 +75,7 @@ Page {
                     target: listItem
                 }
                 Label {
+                    id: someLabel
                     x: searchField.textLeftMargin
                     anchors.verticalCenter: parent.verticalCenter
                     color: searchString.length > 0 ? (highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor)
