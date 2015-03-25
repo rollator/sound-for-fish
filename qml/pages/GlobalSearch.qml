@@ -64,7 +64,7 @@ Page {
             delegate: ListItem {
                 id: listItem
                 menu: contextMenuComponent
-                contentHeight: someLabel.height
+                //contentHeight: someLabel.height //items get to small
 
                 onClicked: streamy.playSearchItem(index)
 

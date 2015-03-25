@@ -1,6 +1,7 @@
 #include "streammanager.h"
 #include <QMediaPlayer>
 #include <QtMultimedia>
+#include "soundmanager.h"
 
 // to get the next played songs when playing a song:
 //https://api-v2.soundcloud.com/tracks/188684387/related?anon_user_id=69157178&limit=3&offset=0&linked_partitioning=1&client_id=b45b1aa10f1ac2941910a7f0d10f8e28&app_version=4a3bcba
@@ -8,8 +9,9 @@
 // limit = 3, offset =3
 //then limit = 3, offset = 6
 
-StreamManager::StreamManager(QObject *parent): QObject(parent)
+StreamManager::StreamManager(QObject *parent, SoundManager *myPlay): QObject(parent)
 {
+    soundy = myPlay;
 	player = new QMediaPlayer;
     playlist = new QMediaPlaylist;
     player->setPlaylist(playlist);

@@ -3,6 +3,7 @@
 #include <QObject>
 #include <QtMultimedia>
 #include <QMediaPlayer>
+#include "soundmanager.h"
 
 
 class StreamManager : public QObject
@@ -16,7 +17,7 @@ class StreamManager : public QObject
     QJsonArray searchResults;
     QMediaPlaylist *playlist;
 public:
-    explicit StreamManager(QObject *parent = 0);
+    explicit StreamManager(QObject *parent = 0, SoundManager *myPlay = 0);
     Q_INVOKABLE QStringList tracks ();
     Q_INVOKABLE void playSearchItem(int index);
     Q_INVOKABLE void addQueueSearchItem(int index);
@@ -29,6 +30,7 @@ public:
 public slots:
     void reactSearch (QNetworkReply*);
 private:
+    SoundManager *soundy;
     QString theList;
     QNetworkAccessManager* searchManager;
     void followRedirect(QNetworkReply*);

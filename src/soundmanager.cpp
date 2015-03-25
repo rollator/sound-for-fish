@@ -1,15 +1,15 @@
-#include "player.h"
+#include "soundmanager.h"
 #include <QObject>
 #include <QtMultimedia>
 #include <QMediaPlayer>
 
-Player::Player(QObject *parent): QObject(parent)
+SoundManager::SoundManager(QObject *parent): QObject(parent)
 {
     initializePlayerAndPlayList();
     initializeWebStuff();
 
 }
-void Player::initializePlayerAndPlayList()
+void SoundManager::initializePlayerAndPlayList()
 {
     mediaPlayer = new QMediaPlayer;
     playlist = new QMediaPlaylist;
@@ -17,7 +17,7 @@ void Player::initializePlayerAndPlayList()
     mediaPlayer->setVolume(100);
     return;
 }
-void Player::initializeWebStuff()
+void SoundManager::initializeWebStuff()
 {
     BASE_ADDRESS = "http://api.soundcloud.com";
     BASE_ADDRESS_V2 = "https://api-v2.soundcloud.com";
@@ -27,12 +27,12 @@ void Player::initializeWebStuff()
     connect(infinitePlayManager, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(someFancyReactionSlot(QNetworkReply*)));
 }
-void Player::someFancyReactionSlot(QNetworkReply *reply)
+void SoundManager::someFancyReactionSlot(QNetworkReply *reply)
 {
     return;
 }
 
-void Player::play(QString url, int trackID)
+void SoundManager::play(QString url, int trackID)
 {
     mediaPlayer->setMedia(QUrl(url+"?"+BASE_QUERY));
     playlist->clear();

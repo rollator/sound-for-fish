@@ -4,11 +4,11 @@
 #include <QtMultimedia>
 #include <QMediaPlayer>
 
-class Player : public QObject
+class SoundManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit Player(QObject *parent = 0);
+    explicit SoundManager(QObject *parent = 0);
 public slots:
     void someFancyReactionSlot(QNetworkReply*);
 private:

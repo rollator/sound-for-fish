@@ -37,14 +37,17 @@
 #include <QQmlContext>
 
 #include <sailfishapp.h>
-#include "streamManager.h"
+#include "streammanager.h"
+#include "soundmanager.h"
 
 
 int main(int argc, char *argv[])
 {
     QGuiApplication *app = SailfishApp::application(argc, argv);
     QQuickView *view = SailfishApp::createView();
-    StreamManager *streamy = new StreamManager(app);
+    SoundManager *soundy = new SoundManager(app);
+    StreamManager *streamy = new StreamManager(app, soundy);
+    view->rootContext()->setContextProperty("soundy", soundy);
     view->rootContext()->setContextProperty("streamy", streamy);
     view->setSource(SailfishApp::pathTo("qml/soundcloud_unofficial.qml"));
     view->showFullScreen();
