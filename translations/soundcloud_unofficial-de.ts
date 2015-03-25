@@ -54,7 +54,7 @@
         <translation type="obsolete">Hallo Matrosen</translation>
     </message>
     <message>
-        <source>search</source>
+        <source>meh; placeholder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

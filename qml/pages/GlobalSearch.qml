@@ -6,9 +6,6 @@ Page {
     id: searchPage
     property string searchString
     property bool keepSearchFieldFocus
-    //property string activeView: "list"
-
-    //onSearchStringChanged: listModel.update()
     onSearchStringChanged: {
         streamy.search(searchString)
     }
@@ -21,7 +18,6 @@ Page {
     }
     Loader {
         anchors.fill: parent
-        //sourceComponent: activeView == "list" ? listViewComponent : gridViewComponent
         sourceComponent: listViewComponent
     }
 
@@ -63,11 +59,6 @@ Page {
             PullDownMenu {
                 MenuItem {
                     text: qsTr("meh; placeholder")
-//                    onClicked: streamy.search("meh; placeholder")
-//                    onClicked: {
-//                        //keepSearchFieldFocus = searchField.activeFocus
-//                        //activeView = "grid"
-//                    }
                 }
             }
             delegate: ListItem {
@@ -113,10 +104,6 @@ Page {
 
     ListModel {
         id: listModel
-
-        // copied under creative commons license from Wikipedia
-        // http://en.wikipedia.org/wiki/List_of_sovereign_states
-        //property variant countries: ["Afghanistan", "Bangladesh"]
         function update() {
             var tracks = streamy.tracks()
             listModel.clear()
@@ -127,21 +114,6 @@ Page {
             for(var index = 0; index < tracks.length; index++){
                 append({"text": tracks[index]})
             }
-
-//            var foo = test
-//            setProperty(1, "text", foo[0])
-           //append({"text": foo[1]}) // makes foo[1] appear in the list
-//            var filteredCountries = countries.filter(function (country) { return country.toLowerCase().indexOf(searchString) !== -1 })
-//            while (count > filteredCountries.length) {
-//                remove(filteredCountries.length)
-//            }
-//            for (var index = 0; index < filteredCountries.length; index++) {
-//                if (index < count) {
-//                    setProperty(index, "text", filteredCountries[index])
-//                } else {
-//                    append({ "text": filteredCountries[index]})
-//                }
-//            }
         }
     }
 }

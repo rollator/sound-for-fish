@@ -63,6 +63,7 @@ void StreamManager :: search ( const QString &searchString)
 {
     if (searchString.size()==0){
         searchResults = QJsonDocument::fromJson("[]").array();
+        emit searchDone();
         return;
     }
 	QString client_id_param = "&client_id=" + CLIENT_ID;

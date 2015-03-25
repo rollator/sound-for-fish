@@ -38,7 +38,7 @@
 <context>
     <name>GlobalSearch</name>
     <message>
-        <source>search</source>
+        <source>meh; placeholder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
